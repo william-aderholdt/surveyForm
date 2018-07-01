@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<style>
+.layout {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.formLayout {
+    grid-column: span 3;
+    background-color: rgb(184, 228, 228);
+    color: black;
+    border-radius: 25px;
+    border-color: black;
+    border-style: solid;
+    height: auto;
+    text-align: center;
+}
+.descriptionText {
+    text-align: center;
+    grid-column: 2;
+    font-family: Arial, Helvetica, sans-serif
+}
+.titleText {
+    grid-column: 2;
+}
+.formText {
+    grid-column: 2;
+    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 20px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif
+}
+.formLeft {
+    grid-column: 1;
+    text-align: right;
+    padding-right: 10px;
+}
+.formRight {
+    grid-column: 2;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.inputField {
+    height: 20px;
+    width: 280px;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+}
+</style>
+
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    </head>
+    <main>
+        <div class="layout"> 
+            <div class="titleText" id="title">
+                    <h1>Conference Registration</h1>
+            </div>
+            <div class="formLayout">
+                <div class="descriptionText" id="description">
+                    <h4>Please fill-in and submit this form to complete your conference registration.</h4>
+                </div>
+                <div id="survey-form">
+                    <form>
+                        <div class="formText" id="name">
+                            <div class="formLeft">
+                                Name*: 
+                            </div>
+                            <div class="formRight">
+                                <input type="text" name="inputName" placeholder="Type Name Here" id="name-label" required class="inputField">
+                            </div>
+                        </div>
+                        <div class="formText" id="email">
+                            <div class="formLeft">
+                                Email*: 
+                            </div>
+                            <div class="formRight">
+                                <input type="email" name="inputEmail" placeholder="Type Email Here" id="email-label" required class="inputField">
+                            </div>
+                        </div>
+                        <div class="formText" id="number">
+                            <div class="formLeft">
+                                Age:
+                            </div>
+                            <div class="formRight">
+                                <input type="number" name="inputAge" placeholder="Type Age Here" id="number-label" min="1" max="125" class="inputField">
+                            </div>
+                        </div>
+                        <div class="formText" id="dropdown">
+                            <div class="formLeft">
+                                What type of member are you?
+                            </div>
+                            <div class="formRight">
+                                <select>
+                                    <option value="guest">Guest</option>
+                                    <option value="member">Member</option>
+                                    <option value="execBoard">Executive Board</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="formText" id="radio">
+                            <div class="formLeft">
+                                What menu option would you like?:
+                            </div>
+                            <div class="formRight">
+                                <input type="radio" name="inputRadio" value="chicken">Chicken with a rice pilaf.<br>
+                                <input type="radio" name="inputRadio" value="steak">Steak with a salad. <em>(Gluten Free)</em><br>
+                                <input type="radio" name="inputRadio" value="Battlestar Galactica">Grilled portobello mushrooms. <em>(Vegetarian Option)</em>
+                            </div>
+                        </div>
+                        <div class="formText" id="checkboxes">
+                            <div class="formLeft">
+                                Additional Addons: 
+                            </div>
+                            <div class="formRight">
+                                <input type="checkbox" name="inputCheckbox" value="hotelPackage">2-night hotel stay ($149.00/night).<br>
+                                <input type="checkbox" name="inputCheckbox" value="parkingPass">2-day parking ($5.00/day).<br>
+                                <input type="checkbox" name="inputCheckbox" value="wifi">2-day hotel wifi access ($10.00/day).<br>
+                            </div>
+                        </div>
+                        <div class="formText" id="textBox">
+                            <div class="formLeft">
+                                Do you have any additional requests?
+                            </div>
+                            <div class="formRight">
+                                <textarea name="inputText" placeholder="Input additional requests here..." id="number-label" class="inputField"></textarea>
+                            </div>
+                        </div>
+                        <div class="descriptionText">
+                            <input type="button" name="submitButton" value="Submit Registration" id="submit" style="height: 30px; color: black; background: transparent; border-radius: 6px; border-color: black; width: 150px;">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</html>
